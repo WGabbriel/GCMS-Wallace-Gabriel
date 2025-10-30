@@ -46,4 +46,14 @@ class WebAppApplicationTests {
             .string(containsString("Hello, ramide!")));
 
   }
+
+  @Test
+  public void shouldReturncopiaMessage() throws Exception {
+    this.mockMvc.perform(get("/copia"))
+
+        .andDo(print()).andExpect(status().isOk())
+        .andExpect(content()
+            .string(containsString("Hello, copia!")));
+
+  }
 }

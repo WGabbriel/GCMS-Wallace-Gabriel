@@ -21,4 +21,9 @@ public class HomeController {
     public @ResponseBody String greetingramide() {
         return "Hello, ramide!";
     }
+
+    @RequestMapping("/copia")
+    public @ResponseBody String greetingcopia() {
+        return "Hello, copia!";
+    }
 }
