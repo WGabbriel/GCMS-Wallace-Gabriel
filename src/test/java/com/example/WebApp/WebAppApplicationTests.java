@@ -54,6 +54,15 @@ class WebAppApplicationTests {
         .andDo(print()).andExpect(status().isOk())
         .andExpect(content()
             .string(containsString("Hello, copia!")));
+  }
+
+  @Test
+  public void shouldReturnoriginalMessage() throws Exception {
+    this.mockMvc.perform(get("/original"))
+
+        .andDo(print()).andExpect(status().isOk())
+        .andExpect(content()
+            .string(containsString("Hello, original!")));
 
   }
 }
