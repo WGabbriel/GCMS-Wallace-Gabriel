@@ -1,4 +1,5 @@
 package com.example.WebApp;
+
 import static org.hamcrest.Matchers.containsString;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,27 +10,40 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 class WebAppApplicationTests {
-@Autowired
-private MockMvc mockMvc;
-@Test
-public void shouldReturnDefaultMessage() throws Exception {
-this.mockMvc.perform(get("/"))
+  @Autowired
+  private MockMvc mockMvc;
 
-.andDo(print()).andExpect(status().isOk())
-.andExpect(content()
-.string(containsString("Hello, World!")));
+  @Test
+  public void shouldReturnDefaultMessage() throws Exception {
+    this.mockMvc.perform(get("/"))
 
-}
-@Test
-public void shouldReturngabrielMessage() throws Exception {
-this.mockMvc.perform(get("/gabriel"))
+        .andDo(print()).andExpect(status().isOk())
+        .andExpect(content()
+            .string(containsString("Hello, World!")));
 
-.andDo(print()).andExpect(status().isOk())
-.andExpect(content()
-.string(containsString("Hello, gabriel!")));
+  }
 
-}
+  @Test
+  public void shouldReturngabrielMessage() throws Exception {
+    this.mockMvc.perform(get("/gabriel"))
+
+        .andDo(print()).andExpect(status().isOk())
+        .andExpect(content()
+            .string(containsString("Hello, gabriel!")));
+
+  }
+
+  @Test
+  public void shouldReturnramideMessage() throws Exception {
+    this.mockMvc.perform(get("/ramide"))
+
+        .andDo(print()).andExpect(status().isOk())
+        .andExpect(content()
+            .string(containsString("Hello, ramide!")));
+
+  }
 }
