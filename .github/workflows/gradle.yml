@@ -17,7 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: docker://wallacegabriel/gcms:gcms-2025
+      image: docker://wallacegabriel/gcms:imagem-docker
 
     steps:
     - uses: actions/checkout@v4
