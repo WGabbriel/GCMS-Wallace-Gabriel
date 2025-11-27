@@ -15,10 +15,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    container:
+      image: docker://wallacegabriel/gcms:gcms-2025
 
     steps:
     - uses: actions/checkout@v4
